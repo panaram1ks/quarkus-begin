@@ -1,7 +1,6 @@
 package org.agoncal.quarkus.starting;
 
 import jakarta.enterprise.context.ApplicationScoped;
-import jakarta.ws.rs.PathParam;
 
 import java.util.List;
 import java.util.Optional;
