@@ -1,12 +1,16 @@
 package org.agoncal.quarkus.starting;
 
 import jakarta.enterprise.context.ApplicationScoped;
+import org.eclipse.microprofile.config.inject.ConfigProperty;
 
 import java.util.List;
 import java.util.Optional;
 
 @ApplicationScoped
 public class BookRepository {
+
+    @ConfigProperty(name = "books.genre", defaultValue ="Sci-Fi" )
+    private String genre;
 
     public List<Book> getAllBooks() {
         return List.of(
