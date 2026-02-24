@@ -1,1 +1,5 @@
 mvn quarkus:dev -Dquarkus.profile=staging
+
+mvn package -DskipTests
+
+mvn package -DskipTests -Dquarkus.package.type=uber-jar
