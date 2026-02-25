@@ -2,4 +2,10 @@ mvn quarkus:dev -Dquarkus.profile=staging
 
 mvn package -DskipTests
 
+mvn package -DskipTests -Dquarkus.package.type=jar
+mvn package -DskipTests -Dquarkus.package.type=legacy-jar
 mvn package -DskipTests -Dquarkus.package.type=uber-jar
+
+mvn package -DskipTests -Dquarkus.package.type=native
+mvn package -DskipTests -Pnative
+./target/rest-book-runner
