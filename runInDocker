@@ -7,6 +7,22 @@ mvn package -Dquarkus.container-image.build=true -Dquarkus.package.type=legacy-j
 
 #docker run -i --rm -p 8080:8080 agoncal/rest-book:1.0-SNAPSHOT
 
-mvn package -Dquarkus.container-image.build=true -Dquarkus.package.type=fast-jar -Dquarkus.container-image.tag=jvm
 
+mvn package -Dquarkus.container-image.build=true -Dquarkus.package.type=fast-jar -Dquarkus.container-image.tag=jvm
 docker run -i --rm -p 8080:8080 parom/rest-book:jvm
+
+
+
+Все работает на JDK 17, GraalVM 25, Maven 3.9.11
+
+build native app
+in Linux
+mvn package -Dquarkus.container-image.build=true -Dquarkus.package.type=native -Dquarkus.container-image.tag=native
+
+in Mac or Windows (magic happens in container with Linux)
+mvn package -Dquarkus.container-image.build-true
+            -Dquarkus.package.type=native
+            -Dquarkus.native.container-build=true
+            -Dquarkus.container-image.tag=native
+
+docker run -i --rm -p 8080:8080 parom/rest-book:native
