@@ -1,0 +1,12 @@
+mvn quarkus:add-extension -Dextension='container-image-docker'
+
+mvn package -Dquarkus.container-image.build=true
+
+mvn package -Dquarkus.container-image.build=true -Dquarkus.package.type=fast-jar
+mvn package -Dquarkus.container-image.build=true -Dquarkus.package.type=legacy-jar
+
+#docker run -i --rm -p 8080:8080 agoncal/rest-book:1.0-SNAPSHOT
+
+mvn package -Dquarkus.container-image.build=true -Dquarkus.package.type=fast-jar -Dquarkus.container-image.tag=jvm
+
+docker run -i --rm -p 8080:8080 parom/rest-book:jvm
