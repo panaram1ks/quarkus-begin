@@ -9,3 +9,5 @@ mvn package -DskipTests -Dquarkus.package.type=uber-jar
 mvn package -DskipTests -Dquarkus.package.type=native
 mvn package -DskipTests -Pnative
 ./target/rest-book-runner
+
+mvn verify -Pnative
